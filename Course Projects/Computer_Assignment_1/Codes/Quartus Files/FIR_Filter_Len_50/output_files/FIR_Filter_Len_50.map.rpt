@@ -1,0 +1,537 @@
+Analysis & Synthesis report for FIR_Filter_Len_50
+Fri Oct 14 20:59:55 2022
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |FIR_Filter|FIR_CU:CU|ps
+  9. User-Specified and Inferred Latches
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Parameter Settings for User Entity Instance: FIR_CU:CU
+ 13. Port Connectivity Checks: "FIR_DataPath:Data_Path|Output_Register_D_Flip_Flop:temp_result"
+ 14. Port Connectivity Checks: "FIR_DataPath:Data_Path"
+ 15. Post-Synthesis Netlist Statistics for Top Partition
+ 16. Elapsed Time Per Partition
+ 17. Analysis & Synthesis Messages
+ 18. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Fri Oct 14 20:59:55 2022       ;
+; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Revision Name                      ; FIR_Filter_Len_50                           ;
+; Top-level Entity Name              ; FIR_Filter                                  ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 171                                         ;
+;     Total combinational functions  ; 171                                         ;
+;     Dedicated logic registers      ; 4                                           ;
+; Total registers                    ; 4                                           ;
+; Total pins                         ; 34                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE6E22A7        ;                    ;
+; Top-level entity name                                            ; FIR_Filter         ; FIR_Filter_Len_50  ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                           ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                             ; Library ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------+---------+
+; Sign_Extension.v                 ; yes             ; User Verilog HDL File  ; D:/modelsim_ase/Projects/FIR_Filter_Len_50/Sign_Extension.v              ;         ;
+; Register_D_Flip_Flop.v           ; yes             ; User Verilog HDL File  ; D:/modelsim_ase/Projects/FIR_Filter_Len_50/Register_D_Flip_Flop.v        ;         ;
+; Pipe_Line_Multiplier.v           ; yes             ; User Verilog HDL File  ; D:/modelsim_ase/Projects/FIR_Filter_Len_50/Pipe_Line_Multiplier.v        ;         ;
+; Output_Register_D_Flip_Flop.v    ; yes             ; User Verilog HDL File  ; D:/modelsim_ase/Projects/FIR_Filter_Len_50/Output_Register_D_Flip_Flop.v ;         ;
+; FIR_Filter.v                     ; yes             ; User Verilog HDL File  ; D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_Filter.v                  ;         ;
+; FIR_DataPath.v                   ; yes             ; User Verilog HDL File  ; D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_DataPath.v                ;         ;
+; FIR_CU.v                         ; yes             ; User Verilog HDL File  ; D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v                      ;         ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 171       ;
+;                                             ;           ;
+; Total combinational functions               ; 171       ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 16        ;
+;     -- 3 input functions                    ; 54        ;
+;     -- <=2 input functions                  ; 101       ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 122       ;
+;     -- arithmetic mode                      ; 49        ;
+;                                             ;           ;
+; Total registers                             ; 4         ;
+;     -- Dedicated logic registers            ; 4         ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 34        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 54        ;
+; Total fan-out                               ; 474       ;
+; Average fan-out                             ; 1.95      ;
++---------------------------------------------+-----------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                        ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name   ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------+-------------+--------------+
+; |FIR_Filter                ; 171 (0)             ; 4 (0)                     ; 0           ; 0            ; 0       ; 0         ; 34   ; 0            ; |FIR_Filter           ; FIR_Filter  ; work         ;
+;    |FIR_CU:CU|             ; 171 (171)           ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FIR_Filter|FIR_CU:CU ; FIR_CU      ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------+
+; State Machine - |FIR_Filter|FIR_CU:CU|ps                                        ;
++---------------------+-----------------+---------+---------------------+---------+
+; Name                ; ps.Output_Ready ; ps.Calc ; ps.Reset_FIR_output ; ps.Idle ;
++---------------------+-----------------+---------+---------------------+---------+
+; ps.Idle             ; 0               ; 0       ; 0                   ; 0       ;
+; ps.Reset_FIR_output ; 0               ; 0       ; 1                   ; 1       ;
+; ps.Calc             ; 0               ; 1       ; 0                   ; 1       ;
+; ps.Output_Ready     ; 1               ; 0       ; 0                   ; 1       ;
++---------------------+-----------------+---------+---------------------+---------+
+
+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; FIR_CU:CU|Filter_coefficeint_select[6]              ; clk                 ; yes                    ;
+; FIR_CU:CU|Filter_coefficeint_select[7]              ; clk                 ; yes                    ;
+; FIR_CU:CU|Filter_coefficeint_select[8]              ; clk                 ; yes                    ;
+; FIR_CU:CU|Filter_coefficeint_select[9]              ; clk                 ; yes                    ;
+; FIR_CU:CU|Filter_coefficeint_select[10]             ; clk                 ; yes                    ;
+; FIR_CU:CU|Filter_coefficeint_select[11]             ; clk                 ; yes                    ;
+; FIR_CU:CU|Filter_coefficeint_select[12]             ; clk                 ; yes                    ;
+; FIR_CU:CU|Filter_coefficeint_select[13]             ; clk                 ; yes                    ;
+; FIR_CU:CU|Filter_coefficeint_select[14]             ; clk                 ; yes                    ;
+; FIR_CU:CU|Filter_coefficeint_select[15]             ; clk                 ; yes                    ;
+; FIR_CU:CU|Filter_coefficeint_select[16]             ; clk                 ; yes                    ;
+; FIR_CU:CU|Filter_coefficeint_select[17]             ; clk                 ; yes                    ;
+; FIR_CU:CU|Filter_coefficeint_select[18]             ; clk                 ; yes                    ;
+; FIR_CU:CU|Filter_coefficeint_select[19]             ; clk                 ; yes                    ;
+; FIR_CU:CU|Filter_coefficeint_select[20]             ; clk                 ; yes                    ;
+; FIR_CU:CU|Filter_coefficeint_select[21]             ; clk                 ; yes                    ;
+; FIR_CU:CU|Filter_coefficeint_select[22]             ; clk                 ; yes                    ;
+; FIR_CU:CU|Filter_coefficeint_select[23]             ; clk                 ; yes                    ;
+; FIR_CU:CU|Filter_coefficeint_select[24]             ; clk                 ; yes                    ;
+; FIR_CU:CU|Filter_coefficeint_select[25]             ; clk                 ; yes                    ;
+; FIR_CU:CU|Filter_coefficeint_select[26]             ; clk                 ; yes                    ;
+; FIR_CU:CU|Filter_coefficeint_select[27]             ; clk                 ; yes                    ;
+; FIR_CU:CU|Filter_coefficeint_select[28]             ; clk                 ; yes                    ;
+; FIR_CU:CU|Filter_coefficeint_select[29]             ; clk                 ; yes                    ;
+; FIR_CU:CU|Filter_coefficeint_select[30]             ; clk                 ; yes                    ;
+; FIR_CU:CU|Filter_coefficeint_select[31]             ; clk                 ; yes                    ;
+; FIR_CU:CU|Filter_coefficeint_select[32]             ; clk                 ; yes                    ;
+; FIR_CU:CU|Filter_coefficeint_select[33]             ; clk                 ; yes                    ;
+; FIR_CU:CU|Filter_coefficeint_select[34]             ; clk                 ; yes                    ;
+; FIR_CU:CU|Filter_coefficeint_select[35]             ; clk                 ; yes                    ;
+; FIR_CU:CU|Filter_coefficeint_select[36]             ; clk                 ; yes                    ;
+; FIR_CU:CU|Filter_coefficeint_select[37]             ; clk                 ; yes                    ;
+; FIR_CU:CU|Filter_coefficeint_select[38]             ; clk                 ; yes                    ;
+; FIR_CU:CU|Filter_coefficeint_select[39]             ; clk                 ; yes                    ;
+; FIR_CU:CU|Filter_coefficeint_select[40]             ; clk                 ; yes                    ;
+; FIR_CU:CU|Filter_coefficeint_select[41]             ; clk                 ; yes                    ;
+; FIR_CU:CU|Filter_coefficeint_select[42]             ; clk                 ; yes                    ;
+; FIR_CU:CU|Filter_coefficeint_select[43]             ; clk                 ; yes                    ;
+; FIR_CU:CU|Filter_coefficeint_select[44]             ; clk                 ; yes                    ;
+; FIR_CU:CU|Filter_coefficeint_select[45]             ; clk                 ; yes                    ;
+; FIR_CU:CU|Filter_coefficeint_select[46]             ; clk                 ; yes                    ;
+; FIR_CU:CU|Filter_coefficeint_select[47]             ; clk                 ; yes                    ;
+; FIR_CU:CU|Filter_coefficeint_select[48]             ; clk                 ; yes                    ;
+; FIR_CU:CU|Filter_coefficeint_select[49]             ; clk                 ; yes                    ;
+; FIR_CU:CU|Filter_coefficeint_select[4]              ; clk                 ; yes                    ;
+; FIR_CU:CU|Filter_coefficeint_select[5]              ; clk                 ; yes                    ;
+; FIR_CU:CU|Filter_coefficeint_select[1]              ; clk                 ; yes                    ;
+; FIR_CU:CU|Filter_coefficeint_select[0]              ; clk                 ; yes                    ;
+; FIR_CU:CU|Filter_coefficeint_select[3]              ; clk                 ; yes                    ;
+; FIR_CU:CU|Filter_coefficeint_select[2]              ; clk                 ; yes                    ;
+; Number of user-specified and inferred latches = 50  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                               ;
++-------------------------------------------------------------------------+----------------------------------------+
+; Register name                                                           ; Reason for Removal                     ;
++-------------------------------------------------------------------------+----------------------------------------+
+; FIR_DataPath:Data_Path|Output_Register_D_Flip_Flop:temp_result|Q[0..21] ; Stuck at GND due to stuck port data_in ;
+; FIR_CU:CU|ps~4                                                          ; Lost fanout                            ;
+; FIR_CU:CU|ps~5                                                          ; Lost fanout                            ;
+; Total Number of Removed Registers = 24                                  ;                                        ;
++-------------------------------------------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 4     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 4     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------+
+; Parameter Settings for User Entity Instance: FIR_CU:CU ;
++------------------+-------+-----------------------------+
+; Parameter Name   ; Value ; Type                        ;
++------------------+-------+-----------------------------+
+; Idle             ; 00    ; Unsigned Binary             ;
+; Reset_FIR_output ; 01    ; Unsigned Binary             ;
+; Calc             ; 10    ; Unsigned Binary             ;
+; Output_Ready     ; 11    ; Unsigned Binary             ;
++------------------+-------+-----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FIR_DataPath:Data_Path|Output_Register_D_Flip_Flop:temp_result"                                                                                                                       ;
++----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type  ; Severity ; Details                                                                                                                                                                            ;
++----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; load     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; load[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
++----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FIR_DataPath:Data_Path"                                                                                                                                                                                ;
++---------------------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port                      ; Type  ; Severity ; Details                                                                                                                                                                            ;
++---------------------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Filter_coefficeint_select ; Input ; Warning  ; Input port expression (50 bits) is wider than the input port (8 bits) it drives.  The 42 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++---------------------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 34                          ;
+; cycloneiii_ff         ; 4                           ;
+;     CLR               ; 4                           ;
+; cycloneiii_lcell_comb ; 172                         ;
+;     arith             ; 49                          ;
+;         2 data inputs ; 49                          ;
+;     normal            ; 123                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 51                          ;
+;         3 data inputs ; 54                          ;
+;         4 data inputs ; 16                          ;
+;                       ;                             ;
+; Max LUT depth         ; 5.90                        ;
+; Average LUT depth     ; 3.31                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+    Info: Processing started: Fri Oct 14 20:59:38 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off FIR_Filter_Len_50 -c FIR_Filter_Len_50
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file sign_extension.v
+    Info (12023): Found entity 1: Sign_Extension File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/Sign_Extension.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file register_d_flip_flop.v
+    Info (12023): Found entity 1: Register_D_Flip_Flop File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/Register_D_Flip_Flop.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file pipe_line_multiplier.v
+    Info (12023): Found entity 1: Pipe_Line_Multiplier File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/Pipe_Line_Multiplier.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file output_register_d_flip_flop.v
+    Info (12023): Found entity 1: Output_Register_D_Flip_Flop File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/Output_Register_D_Flip_Flop.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file fir_filter.v
+    Info (12023): Found entity 1: FIR_Filter File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_Filter.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file fir_datapath.v
+    Info (12023): Found entity 1: FIR_DataPath File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_DataPath.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file fir_cu.v
+    Info (12023): Found entity 1: FIR_CU File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 1
+Info (12127): Elaborating entity "FIR_Filter" for the top level hierarchy
+Info (12128): Elaborating entity "FIR_DataPath" for hierarchy "FIR_DataPath:Data_Path" File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_Filter.v Line: 10
+Warning (10030): Net "coefficeints" at FIR_DataPath.v(7) has no driver or initial value, using a default initial value '0' File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_DataPath.v Line: 7
+Info (12128): Elaborating entity "Register_D_Flip_Flop" for hierarchy "FIR_DataPath:Data_Path|Register_D_Flip_Flop:generate_shift_register[50].register" File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_DataPath.v Line: 20
+Info (12128): Elaborating entity "Pipe_Line_Multiplier" for hierarchy "FIR_DataPath:Data_Path|Pipe_Line_Multiplier:Mult" File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_DataPath.v Line: 26
+Warning (10230): Verilog HDL assignment warning at Pipe_Line_Multiplier.v(9): truncated value with size 32 to match size of target (8) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/Pipe_Line_Multiplier.v Line: 9
+Warning (10230): Verilog HDL assignment warning at Pipe_Line_Multiplier.v(10): truncated value with size 32 to match size of target (8) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/Pipe_Line_Multiplier.v Line: 10
+Warning (10230): Verilog HDL assignment warning at Pipe_Line_Multiplier.v(24): truncated value with size 32 to match size of target (16) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/Pipe_Line_Multiplier.v Line: 24
+Info (12128): Elaborating entity "Sign_Extension" for hierarchy "FIR_DataPath:Data_Path|Sign_Extension:sign_extension" File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_DataPath.v Line: 28
+Info (12128): Elaborating entity "Output_Register_D_Flip_Flop" for hierarchy "FIR_DataPath:Data_Path|Output_Register_D_Flip_Flop:temp_result" File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_DataPath.v Line: 30
+Info (12128): Elaborating entity "FIR_CU" for hierarchy "FIR_CU:CU" File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_Filter.v Line: 11
+Warning (10230): Verilog HDL assignment warning at FIR_CU.v(13): truncated value with size 32 to match size of target (1) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 13
+Warning (10240): Verilog HDL Always Construct warning at FIR_CU.v(21): inferring latch(es) for variable "Filter_coefficeint_select", which holds its previous value in one or more paths through the always construct File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 21
+Warning (10230): Verilog HDL assignment warning at FIR_CU.v(34): truncated value with size 32 to match size of target (1) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 34
+Info (10041): Inferred latch for "Filter_coefficeint_select[0]" at FIR_CU.v(21) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 21
+Info (10041): Inferred latch for "Filter_coefficeint_select[1]" at FIR_CU.v(21) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 21
+Info (10041): Inferred latch for "Filter_coefficeint_select[2]" at FIR_CU.v(21) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 21
+Info (10041): Inferred latch for "Filter_coefficeint_select[3]" at FIR_CU.v(21) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 21
+Info (10041): Inferred latch for "Filter_coefficeint_select[4]" at FIR_CU.v(21) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 21
+Info (10041): Inferred latch for "Filter_coefficeint_select[5]" at FIR_CU.v(21) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 21
+Info (10041): Inferred latch for "Filter_coefficeint_select[6]" at FIR_CU.v(21) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 21
+Info (10041): Inferred latch for "Filter_coefficeint_select[7]" at FIR_CU.v(21) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 21
+Info (10041): Inferred latch for "Filter_coefficeint_select[8]" at FIR_CU.v(21) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 21
+Info (10041): Inferred latch for "Filter_coefficeint_select[9]" at FIR_CU.v(21) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 21
+Info (10041): Inferred latch for "Filter_coefficeint_select[10]" at FIR_CU.v(21) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 21
+Info (10041): Inferred latch for "Filter_coefficeint_select[11]" at FIR_CU.v(21) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 21
+Info (10041): Inferred latch for "Filter_coefficeint_select[12]" at FIR_CU.v(21) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 21
+Info (10041): Inferred latch for "Filter_coefficeint_select[13]" at FIR_CU.v(21) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 21
+Info (10041): Inferred latch for "Filter_coefficeint_select[14]" at FIR_CU.v(21) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 21
+Info (10041): Inferred latch for "Filter_coefficeint_select[15]" at FIR_CU.v(21) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 21
+Info (10041): Inferred latch for "Filter_coefficeint_select[16]" at FIR_CU.v(21) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 21
+Info (10041): Inferred latch for "Filter_coefficeint_select[17]" at FIR_CU.v(21) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 21
+Info (10041): Inferred latch for "Filter_coefficeint_select[18]" at FIR_CU.v(21) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 21
+Info (10041): Inferred latch for "Filter_coefficeint_select[19]" at FIR_CU.v(21) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 21
+Info (10041): Inferred latch for "Filter_coefficeint_select[20]" at FIR_CU.v(21) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 21
+Info (10041): Inferred latch for "Filter_coefficeint_select[21]" at FIR_CU.v(21) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 21
+Info (10041): Inferred latch for "Filter_coefficeint_select[22]" at FIR_CU.v(21) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 21
+Info (10041): Inferred latch for "Filter_coefficeint_select[23]" at FIR_CU.v(21) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 21
+Info (10041): Inferred latch for "Filter_coefficeint_select[24]" at FIR_CU.v(21) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 21
+Info (10041): Inferred latch for "Filter_coefficeint_select[25]" at FIR_CU.v(21) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 21
+Info (10041): Inferred latch for "Filter_coefficeint_select[26]" at FIR_CU.v(21) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 21
+Info (10041): Inferred latch for "Filter_coefficeint_select[27]" at FIR_CU.v(21) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 21
+Info (10041): Inferred latch for "Filter_coefficeint_select[28]" at FIR_CU.v(21) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 21
+Info (10041): Inferred latch for "Filter_coefficeint_select[29]" at FIR_CU.v(21) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 21
+Info (10041): Inferred latch for "Filter_coefficeint_select[30]" at FIR_CU.v(21) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 21
+Info (10041): Inferred latch for "Filter_coefficeint_select[31]" at FIR_CU.v(21) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 21
+Info (10041): Inferred latch for "Filter_coefficeint_select[32]" at FIR_CU.v(21) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 21
+Info (10041): Inferred latch for "Filter_coefficeint_select[33]" at FIR_CU.v(21) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 21
+Info (10041): Inferred latch for "Filter_coefficeint_select[34]" at FIR_CU.v(21) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 21
+Info (10041): Inferred latch for "Filter_coefficeint_select[35]" at FIR_CU.v(21) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 21
+Info (10041): Inferred latch for "Filter_coefficeint_select[36]" at FIR_CU.v(21) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 21
+Info (10041): Inferred latch for "Filter_coefficeint_select[37]" at FIR_CU.v(21) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 21
+Info (10041): Inferred latch for "Filter_coefficeint_select[38]" at FIR_CU.v(21) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 21
+Info (10041): Inferred latch for "Filter_coefficeint_select[39]" at FIR_CU.v(21) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 21
+Info (10041): Inferred latch for "Filter_coefficeint_select[40]" at FIR_CU.v(21) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 21
+Info (10041): Inferred latch for "Filter_coefficeint_select[41]" at FIR_CU.v(21) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 21
+Info (10041): Inferred latch for "Filter_coefficeint_select[42]" at FIR_CU.v(21) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 21
+Info (10041): Inferred latch for "Filter_coefficeint_select[43]" at FIR_CU.v(21) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 21
+Info (10041): Inferred latch for "Filter_coefficeint_select[44]" at FIR_CU.v(21) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 21
+Info (10041): Inferred latch for "Filter_coefficeint_select[45]" at FIR_CU.v(21) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 21
+Info (10041): Inferred latch for "Filter_coefficeint_select[46]" at FIR_CU.v(21) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 21
+Info (10041): Inferred latch for "Filter_coefficeint_select[47]" at FIR_CU.v(21) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 21
+Info (10041): Inferred latch for "Filter_coefficeint_select[48]" at FIR_CU.v(21) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 21
+Info (10041): Inferred latch for "Filter_coefficeint_select[49]" at FIR_CU.v(21) File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_CU.v Line: 21
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "FIR_output[0]" is stuck at GND File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_Filter.v Line: 5
+    Warning (13410): Pin "FIR_output[1]" is stuck at GND File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_Filter.v Line: 5
+    Warning (13410): Pin "FIR_output[2]" is stuck at GND File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_Filter.v Line: 5
+    Warning (13410): Pin "FIR_output[3]" is stuck at GND File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_Filter.v Line: 5
+    Warning (13410): Pin "FIR_output[4]" is stuck at GND File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_Filter.v Line: 5
+    Warning (13410): Pin "FIR_output[5]" is stuck at GND File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_Filter.v Line: 5
+    Warning (13410): Pin "FIR_output[6]" is stuck at GND File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_Filter.v Line: 5
+    Warning (13410): Pin "FIR_output[7]" is stuck at GND File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_Filter.v Line: 5
+    Warning (13410): Pin "FIR_output[8]" is stuck at GND File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_Filter.v Line: 5
+    Warning (13410): Pin "FIR_output[9]" is stuck at GND File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_Filter.v Line: 5
+    Warning (13410): Pin "FIR_output[10]" is stuck at GND File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_Filter.v Line: 5
+    Warning (13410): Pin "FIR_output[11]" is stuck at GND File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_Filter.v Line: 5
+    Warning (13410): Pin "FIR_output[12]" is stuck at GND File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_Filter.v Line: 5
+    Warning (13410): Pin "FIR_output[13]" is stuck at GND File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_Filter.v Line: 5
+    Warning (13410): Pin "FIR_output[14]" is stuck at GND File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_Filter.v Line: 5
+    Warning (13410): Pin "FIR_output[15]" is stuck at GND File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_Filter.v Line: 5
+    Warning (13410): Pin "FIR_output[16]" is stuck at GND File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_Filter.v Line: 5
+    Warning (13410): Pin "FIR_output[17]" is stuck at GND File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_Filter.v Line: 5
+    Warning (13410): Pin "FIR_output[18]" is stuck at GND File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_Filter.v Line: 5
+    Warning (13410): Pin "FIR_output[19]" is stuck at GND File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_Filter.v Line: 5
+    Warning (13410): Pin "FIR_output[20]" is stuck at GND File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_Filter.v Line: 5
+    Warning (13410): Pin "FIR_output[21]" is stuck at GND File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_Filter.v Line: 5
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 2 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file D:/modelsim_ase/Projects/FIR_Filter_Len_50/output_files/FIR_Filter_Len_50.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 8 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "FIR_input[0]" File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_Filter.v Line: 4
+    Warning (15610): No output dependent on input pin "FIR_input[1]" File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_Filter.v Line: 4
+    Warning (15610): No output dependent on input pin "FIR_input[2]" File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_Filter.v Line: 4
+    Warning (15610): No output dependent on input pin "FIR_input[3]" File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_Filter.v Line: 4
+    Warning (15610): No output dependent on input pin "FIR_input[4]" File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_Filter.v Line: 4
+    Warning (15610): No output dependent on input pin "FIR_input[5]" File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_Filter.v Line: 4
+    Warning (15610): No output dependent on input pin "FIR_input[6]" File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_Filter.v Line: 4
+    Warning (15610): No output dependent on input pin "FIR_input[7]" File: D:/modelsim_ase/Projects/FIR_Filter_Len_50/FIR_Filter.v Line: 4
+Info (21057): Implemented 205 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 11 input pins
+    Info (21059): Implemented 23 output pins
+    Info (21061): Implemented 171 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 41 warnings
+    Info: Peak virtual memory: 604 megabytes
+    Info: Processing ended: Fri Oct 14 20:59:55 2022
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:38
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in D:/modelsim_ase/Projects/FIR_Filter_Len_50/output_files/FIR_Filter_Len_50.map.smsg.
+
+

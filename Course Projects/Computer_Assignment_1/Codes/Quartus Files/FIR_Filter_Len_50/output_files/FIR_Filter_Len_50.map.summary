@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Fri Oct 14 20:59:55 2022
+Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+Revision Name : FIR_Filter_Len_50
+Top-level Entity Name : FIR_Filter
+Family : Cyclone IV E
+Total logic elements : 171
+    Total combinational functions : 171
+    Dedicated logic registers : 4
+Total registers : 4
+Total pins : 34
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

@@ -1,0 +1,83 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/modelsim_ase/Projects/FPGA_Lab_4_HDL_Codes
+vACCELERATOR_CTRL
+!s110 1673242112
+!i10b 1
+!s100 QW_ienRi8P3co2[iGN@HD1
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I:bSk<nK@]kNfK2An^bC8k1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1673115036
+8D:/modelsim_ase/Projects/FPGA_Lab_4_HDL_Codes/accelerator.v
+FD:/modelsim_ase/Projects/FPGA_Lab_4_HDL_Codes/accelerator.v
+!i122 31
+L0 1 105
+Z3 OV;L;2020.1;71
+r1
+!s85 0
+31
+!s108 1673242112.000000
+!s107 D:/modelsim_ase/Projects/FPGA_Lab_4_HDL_Codes/accelerator.v|
+!s90 -reportprogress|300|-work|work|D:/modelsim_ase/Projects/FPGA_Lab_4_HDL_Codes/accelerator.v|
+!i113 1
+Z4 o-work work
+Z5 tCvgOpt 0
+n@a@c@c@e@l@e@r@a@t@o@r_@c@t@r@l
+vAVM_AVALONMASTER_MAGNITUDE
+!s110 1673242106
+!i10b 1
+!s100 ojY<kdg69fW6gW6YHIW2H1
+R1
+IIYbB@k`nS_UL:iT4_gT;`2
+R2
+R0
+w1673242099
+8D:/modelsim_ase/Projects/FPGA_Lab_4_HDL_Codes/accelerator_master.v
+FD:/modelsim_ase/Projects/FPGA_Lab_4_HDL_Codes/accelerator_master.v
+!i122 29
+L0 1 126
+R3
+r1
+!s85 0
+31
+!s108 1673242105.000000
+!s107 D:/modelsim_ase/Projects/FPGA_Lab_4_HDL_Codes/accelerator_master.v|
+!s90 -reportprogress|300|-work|work|D:/modelsim_ase/Projects/FPGA_Lab_4_HDL_Codes/accelerator_master.v|
+!i113 1
+R4
+R5
+n@a@v@m_@a@v@a@l@o@n@m@a@s@t@e@r_@m@a@g@n@i@t@u@d@e
+vAVS_AVALONSLAVE
+!s110 1673242109
+!i10b 1
+!s100 CTe@Wc9BKE_Yn0=EVcE1g1
+R1
+IgDzBFT47VMfzP<HRJoAI?2
+R2
+R0
+w1673114349
+8D:/modelsim_ase/Projects/FPGA_Lab_4_HDL_Codes/accelerator_slave.v
+FD:/modelsim_ase/Projects/FPGA_Lab_4_HDL_Codes/accelerator_slave.v
+!i122 30
+L0 1 97
+R3
+r1
+!s85 0
+31
+!s108 1673242109.000000
+!s107 D:/modelsim_ase/Projects/FPGA_Lab_4_HDL_Codes/accelerator_slave.v|
+!s90 -reportprogress|300|-work|work|D:/modelsim_ase/Projects/FPGA_Lab_4_HDL_Codes/accelerator_slave.v|
+!i113 1
+R4
+R5
+n@a@v@s_@a@v@a@l@o@n@s@l@a@v@e

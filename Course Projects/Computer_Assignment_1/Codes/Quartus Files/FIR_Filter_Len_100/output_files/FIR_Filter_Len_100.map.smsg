@@ -1,0 +1,1 @@
+Info (10281): Verilog HDL Declaration information at FIR_CU.v(3): object "reset_FIR_output" differs only in case from object "Reset_FIR_output" in the same scope File: D:/modelsim_ase/Projects/FIR_Filter_Len_100/FIR_CU.v Line: 3

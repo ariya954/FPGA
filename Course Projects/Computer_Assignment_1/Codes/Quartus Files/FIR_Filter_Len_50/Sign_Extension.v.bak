@@ -1,0 +1,18 @@
+module Sign_Extension(input_data, output_data);
+	input  [15 : 0]input_data;
+	output [21 : 0]output_data;
+
+wire [(22 - 16) - 1 : 0] extension_of_sign_bit;
+
+genvar i;
+
+generate
+
+for(i = 0; i < 22 - 16; i = i + 1) 
+   assign extension_of_sign_bit[i] = input_data[15];
+
+endgenerate
+ 
+assign output_data = {extension_of_sign_bit, input_data};
+
+endmodule

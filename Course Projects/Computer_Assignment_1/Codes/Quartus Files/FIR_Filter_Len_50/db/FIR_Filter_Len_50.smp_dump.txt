@@ -1,0 +1,7 @@
+
+State Machine - |FIR_Filter|FIR_CU:CU|ps
+Name ps.Output_Ready ps.Calc ps.Reset_FIR_output ps.Idle 
+ps.Idle 0 0 0 0 
+ps.Reset_FIR_output 0 0 1 1 
+ps.Calc 0 1 0 1 
+ps.Output_Ready 1 0 0 1 
